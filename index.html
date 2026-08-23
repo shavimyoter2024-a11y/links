@@ -67,15 +67,17 @@
       border: 3px solid rgba(255,255,255,.85);
       box-shadow: 0 10px 34px rgba(0,0,0,.4), 0 0 0 6px rgba(250,205,7,.28);
     }
+    /* עברית: בלי letter-spacing שלילי — מכווץ אותיות ופוגע בקריאות */
     h1 {
       margin-top: 16px;
-      font-size: 26px; font-weight: 900; letter-spacing: -0.2px;
+      font-size: 27px; font-weight: 900; letter-spacing: 0;
+      line-height: 1.2;
     }
     .tagline {
-      margin-top: 8px;
-      font-size: 15px; font-weight: 500; line-height: 1.55;
+      margin-top: 10px;
+      font-size: 14.5px; font-weight: 400; line-height: 1.6;
       color: var(--txt-soft);
-      max-width: 34ch;
+      max-width: 32ch;
     }
 
     /* ---- כפתורים ---- */
@@ -113,9 +115,10 @@
     }
     .btn__ic svg { width: 21px; height: 21px; fill: currentColor; }
 
-    .btn__txt { flex: 1; min-width: 0; }
-    .btn__ttl { font-size: 16px; font-weight: 700; line-height: 1.3; }
-    .btn__sub { font-size: 12.5px; font-weight: 400; color: var(--txt-soft); margin-top: 2px; }
+    /* ⚠️ הכותרת ושורת המשנה הם span — בלי flex-column הן נדבקות לאותה שורה */
+    .btn__txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+    .btn__ttl { display: block; font-size: 16.5px; font-weight: 800; line-height: 1.25; }
+    .btn__sub { display: block; font-size: 12.5px; font-weight: 400; line-height: 1.45; color: var(--txt-soft); }
 
     /* הכפתור הראשי: צהוב מלא, לא זכוכית */
     .btn--cta {
